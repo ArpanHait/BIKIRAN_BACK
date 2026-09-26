@@ -1,0 +1,35 @@
+{
+  "name": "bikiran-backend",
+  "version": "1.0.0",
+  "description": "Bikiran Career Mitra Backend Server for Render hosting",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "migrate": "ts-node src/scripts/migrate.ts"
+  },
+  "keywords": [
+    "bikiran",
+    "career-mitra",
+    "backend",
+    "supabase"
+  ],
+  "author": "Bikiran Foundation",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.9",
+    "@types/pg": "^8.23.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
