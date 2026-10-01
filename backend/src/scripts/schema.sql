@@ -1,6 +1,5 @@
 -- ============================================================================
 -- 🚀 Bikiran Career Mitra — Production Schema & RLS Policies
--- Supabase Project: jpjfkmvkqssfdhpyktim
 -- ============================================================================
 
 -- 1. Profiles Table (1:1 with Supabase auth.users)
