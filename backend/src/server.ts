@@ -3,10 +3,11 @@
  * Designed for deployment on Render.
  */
 
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import healthRoutes from './routes/health.routes';
+import translateRoutes from './routes/translate.routes';
 
 dotenv.config();
 
@@ -18,8 +19,9 @@ app.use(express.json());
 
 // Routes
 app.use('/health', healthRoutes);
+app.use('/api/translate', translateRoutes);
 
-app.get('/', (_req, res) => {
+app.get('/', (_req: Request, res: Response) => {
   res.send('Bikiran Career Mitra Backend API');
 });
 

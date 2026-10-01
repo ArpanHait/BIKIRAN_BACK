@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 🚀 Bikiran Career Mitra — Production Schema & RLS Policies
--- Supabase Project: tzmbxwmpiyzblmrmupwl
+-- Supabase Project: jpjfkmvkqssfdhpyktim
 -- ============================================================================
 
 -- 1. Profiles Table (1:1 with Supabase auth.users)
@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   whatsapp_number TEXT,
   mobile_number TEXT,
   class_level TEXT,
+  stream TEXT,
   school_name TEXT,
   state TEXT,
   subscription_tier TEXT DEFAULT 'basic' CHECK (subscription_tier IN ('basic', 'advance')),
@@ -91,6 +92,7 @@ BEGIN
     whatsapp_number,
     mobile_number,
     class_level,
+    stream,
     school_name,
     state,
     subscription_tier
@@ -103,6 +105,7 @@ BEGIN
     COALESCE(NEW.raw_user_meta_data->>'whatsapp_number', ''),
     COALESCE(NEW.raw_user_meta_data->>'mobile_number', ''),
     COALESCE(NEW.raw_user_meta_data->>'class_level', 'Class 12'),
+    COALESCE(NEW.raw_user_meta_data->>'stream', 'Science Stream'),
     COALESCE(NEW.raw_user_meta_data->>'school_name', ''),
     COALESCE(NEW.raw_user_meta_data->>'state', 'West Bengal'),
     COALESCE(NEW.raw_user_meta_data->>'subscription_tier', 'basic')

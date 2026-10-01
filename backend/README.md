@@ -29,8 +29,8 @@ This is the standalone production backend server for **Bikiran Career Mitra**, d
 4. Add **Environment Variables** (under *Environment* tab):
    - `PORT`: `5000`
    - `NODE_ENV`: `production`
-   - `SUPABASE_URL`: `https://tzmbxwmpiyzblmrmupwl.supabase.co`
-   - `SUPABASE_SERVICE_ROLE_KEY`: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6bWJ4d21waXl6Ymxtcm11cHdsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MDI3MDY3OSwiZXhwIjoyMTA1ODQ2Njc5fQ.FkHTpGGorCD8NJSeIY7oJk09aryf8S6CVC2kbicoOYY`
+   - `SUPABASE_URL`: `https://jpjfkmvkqssfdhpyktim.supabase.co`
+   - `SUPABASE_SERVICE_ROLE_KEY`: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwamZrbXZrcXNzZmRocHlrdGltIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MDgzMDA0OSwiZXhwIjoyMTA2NDA2MDQ5fQ.T0NdckV3T_LGRSBAmP4TV6PfJ3tb3DZQ53TZR_rxsPA`
 5. Click **Deploy Web Service**.
 
 ---

@@ -54,7 +54,7 @@ async function runMigration() {
     }
   } else {
     console.log('ℹ️  DATABASE_URL not set in .env.');
-    console.log('   (To connect directly, set DATABASE_URL=postgresql://postgres:[PASSWORD]@db.tzmbxwmpiyzblmrmupwl.supabase.co:5432/postgres in backend/.env)\n');
+    console.log('   (To connect directly, set DATABASE_URL=postgresql://postgres:[PASSWORD]@db.jpjfkmvkqssfdhpyktim.supabase.co:5432/postgres in backend/.env)\n');
   }
 
   // Verification step via Supabase Admin Client
@@ -69,7 +69,7 @@ async function runMigration() {
   } else if (error.code === 'PGRST205') {
     console.log('\n⚠️  Table `public.profiles` does not exist yet in Supabase.');
     console.log('👉 To apply the migration in 5 seconds:');
-    console.log('   1. Open: https://supabase.com/dashboard/project/tzmbxwmpiyzblmrmupwl/sql/new');
+    console.log('   1. Open: https://supabase.com/dashboard/project/jpjfkmvkqssfdhpyktim/sql/new');
     console.log('   2. Paste the SQL from: backend/src/scripts/schema.sql');
     console.log('   3. Click "Run" (▶️)');
     console.log('   4. Re-run: npm run migrate\n');
