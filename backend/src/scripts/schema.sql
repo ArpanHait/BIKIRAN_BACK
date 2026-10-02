@@ -1,5 +1,6 @@
 -- ============================================================================
 -- 🚀 Bikiran Career Mitra — Production Schema & RLS Policies
+-- Supabase Project: jpjfkmvkqssfdhpyktim
 -- ============================================================================
 
 -- 1. Profiles Table (1:1 with Supabase auth.users)
@@ -16,6 +17,8 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   school_name TEXT,
   state TEXT,
   subscription_tier TEXT DEFAULT 'basic' CHECK (subscription_tier IN ('basic', 'advance')),
+  role TEXT DEFAULT 'general' CHECK (role IN ('general', 'admin')),
+  form_submitted TEXT DEFAULT 'no' CHECK (form_submitted IN ('yes', 'no')),
   has_local_avatar BOOLEAN DEFAULT false,
   avatar_url TEXT,
   last_login_at TIMESTAMPTZ DEFAULT now(),
@@ -94,7 +97,9 @@ BEGIN
     stream,
     school_name,
     state,
-    subscription_tier
+    subscription_tier,
+    role,
+    form_submitted
   ) VALUES (
     NEW.id,
     NEW.email,
@@ -107,9 +112,13 @@ BEGIN
     COALESCE(NEW.raw_user_meta_data->>'stream', 'Science Stream'),
     COALESCE(NEW.raw_user_meta_data->>'school_name', ''),
     COALESCE(NEW.raw_user_meta_data->>'state', 'West Bengal'),
-    COALESCE(NEW.raw_user_meta_data->>'subscription_tier', 'basic')
+    COALESCE(NEW.raw_user_meta_data->>'subscription_tier', 'basic'),
+    COALESCE(NEW.raw_user_meta_data->>'role', 'general'),
+    COALESCE(NEW.raw_user_meta_data->>'form_submitted', 'no')
   )
   ON CONFLICT (id) DO UPDATE SET
+    role = COALESCE(public.profiles.role, 'general'),
+    form_submitted = COALESCE(public.profiles.form_submitted, 'no'),
     last_login_at = now(),
     updated_at = now();
   RETURN NEW;
