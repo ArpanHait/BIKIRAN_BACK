@@ -131,8 +131,8 @@ ${JSON.stringify(uncachedTexts)}`;
     // Cascade through ultra-low-token Flash-Lite models (Zero wasted thinking tokens):
     const candidateModels = [
       'gemini-3.1-flash-lite',
-      'gemini-3.1-flash-lite-preview',
       'gemini-3.5-flash-lite',
+      'gemini-3.8-flash',
       'gemini-flash-lite-latest',
     ];
     let translatedArray: string[] | null = null;

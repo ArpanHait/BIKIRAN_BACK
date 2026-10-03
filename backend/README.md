@@ -8,7 +8,7 @@ This is the standalone production backend server for **Bikiran Career Mitra**, d
 * **Render Free Tier**: Automatically sleeps after 15 minutes of inactivity.
 * **Supabase Free Tier**: Automatically pauses databases after 7 days of inactivity.
 * **The Bikiran Keep-Alive Engine**:
-  - UptimeRobot pings `https://your-app.onrender.com/health` every 5–10 minutes.
+  - UptimeRobot pings `https://bikiran.onrender.com/health` every 5–10 minutes.
   - Render responds with HTTP 200, resetting its 15-minute sleep timer (**Render stays awake 24/7**).
   - During every health check, Render executes a lightweight query against `public.profiles` on Supabase (**Supabase registers active traffic and NEVER pauses**).
 
@@ -19,7 +19,7 @@ This is the standalone production backend server for **Bikiran Career Mitra**, d
 1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** ➔ **Web Service**.
 2. Connect your Git repository (`BIKIRAN_DEV`).
 3. Fill in the service configuration:
-   - **Name**: `bikiran-backend` (or your choice)
+   - **Name**: `bikiran` (Live URL: `https://bikiran.onrender.com`)
    - **Region**: Singapore or closest to India
    - **Root Directory**: `backend`
    - **Runtime**: `Node`
@@ -41,7 +41,7 @@ This is the standalone production backend server for **Bikiran Career Mitra**, d
 2. Click **+ Add New Monitor**:
    - **Monitor Type**: `HTTP(s)`
    - **Friendly Name**: `Bikiran Backend & Supabase Keep-Alive`
-   - **URL (or IP)**: `https://your-service-name.onrender.com/health`
+   - **URL (or IP)**: `https://bikiran.onrender.com/health`
    - **Monitoring Interval**: `5 minutes` (or `10 minutes`)
 3. Click **Create Monitor**.
 
